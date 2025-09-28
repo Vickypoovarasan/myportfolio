@@ -7,13 +7,15 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
 
-// Close nav after clicking a link
+// Close menu after clicking a link (mobile UX fix)
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navLinks.classList.remove("show");
   });
 });
+
+
 
 
 // Close nav after clicking a link
