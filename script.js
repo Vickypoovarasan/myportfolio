@@ -16,6 +16,15 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 
+// Close nav after clicking a link
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("show");
+  });
+});
+
+
 //   typewritter hero section
 
 document.addEventListener("DOMContentLoaded", () => {
