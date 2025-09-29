@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poovarasan | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- nav-bar -->
 <header>
-  <nav class="navbar">
-    <div class="nav-container">
-
-      <!-- Logo -->
-      <div class="logo">
-        <img src="/profile1.jpg" alt="Logo" class="logo-img">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3C467B; position: fixed; top: 0; width: 100%; z-index: 1000;">
+    <div class="container nav-container">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="/profile1.jpg" alt="Logo" style="width:30px; height:30px; border-radius:50%; margin-right:8px; object-fit:cover;">
         <span>Poovarasan</span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+              aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="btn btn-sm text-white ms-lg-3 resume-btn" href="Poovarasan_M_Resume.pdf" download
+               style="background-color:#6E8CFB; border:none;
+               :hover { background-color: #3c4563; }">
+              Download Resume
+            </a>
+          </li>
+        </ul>
       </div>
-
-      <!-- Hamburger -->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Nav Links -->
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="Poovarasan_M_Resume.pdf" download class="resume-btn">Download Resume</a></li>
-      </ul>
-
     </div>
   </nav>
 </header>
+
+
 
 
 <!-- Hero section -->
@@ -56,6 +65,8 @@
     <div class="hero-buttons">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-accent">Hire Me</a>
+      <a href="/Poovarasan_M_Resume.pdf" download="/Poovarasan_M_Resume.pdf" class="btn-primary">Resume</a>
+      
     </div>
 
       <!-- Social Media Links -->
@@ -433,10 +444,52 @@
   </div>
 </footer>
 
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Auto-close collapse when clicking a link (nice UX for single-page anchors) -->
+<script>
+  // Wait until Bootstrap is available
+  document.addEventListener('DOMContentLoaded', function () {
+    const navbarCollapseEl = document.getElementById('mainNavbar');
 
+    // if Bootstrap is loaded
+    if (typeof bootstrap !== 'undefined' && navbarCollapseEl) {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+
+      // close collapse when any nav-link is clicked (on small screens)
+      document.querySelectorAll('#mainNavbar .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          // only hide if currently shown
+          if (navbarCollapseEl.classList.contains('show')) {
+            bsCollapse.hide();
+          }
+        });
+      });
+    }
+  });
+</script>
 
 </body>
+
+<!-- navbar section -->
+<!-- <script>
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("nav-active");
+  hamburger.classList.toggle("toggle");
+});
+
+// Close nav when a link is clicked (for better UX on mobile)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("nav-active");
+    hamburger.classList.remove("toggle");
+  });
+});
+</script> -->
+
 <!-- contact section -->
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
