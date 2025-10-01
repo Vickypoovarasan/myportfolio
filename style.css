@@ -56,16 +56,25 @@ body {
 .nav-links li a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 1s ease-in-out;
 }
 .nav-links li a:hover {
+  border: 5px solid #fff;
   color: #fff;
+  transform: scale(1.1);
+  transition: all 1s ease-in-out;
 }
 .resume-btn {
   background: #6E8CFB;
   padding: 6px 12px;
   border-radius: 4px;
   color: #fff;
+  transition: all 0.4s ease-in-out;
+}
+
+.resume-btn:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hamburger */
@@ -242,19 +251,25 @@ body {
 .btn-primary {
   background-color: #3C467B;
   color: white;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn-primary:hover {
   background-color: #50589C;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
 }
 
 .btn-accent {
   background-color: #6E8CFB;
   color: white;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn-accent:hover {
   background-color: #50589C;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
 }
 
 /* Responsive */
@@ -413,7 +428,7 @@ body {
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 50px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -428,7 +443,7 @@ body {
 }
 
 .edu-card:hover {
-  transform: translateY(20px);
+  transform: scale(1.1) scaleX(1.1);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
