@@ -72,10 +72,26 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-.resume-btn:hover{
-  transform: scale(1.1);
-  transition: all 0.3s ease-in-out;
+/* Animate navbar links */
+.navbar-nav .nav-link {
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.navbar-nav .nav-link:hover {
+  transform: scale(1.1);
+  color: #6E8CFB !important;
+}
+
+/* Animate Resume button */
+.resume-btn {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: scale(1.05);
+  background-color: #3c4563 !important;
+}
+
 
 /* Hamburger */
 .hamburger {
@@ -156,13 +172,36 @@ body {
   object-fit: cover;
   border: 6px solid #6E8CFB;
   margin-bottom: 1rem;
+  /* transition: all 0.3s ease-in-out; */
 }
+
+/* .hero-profile:hover{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #6E8CFB;
+  margin-bottom: 1rem;
+  /* transition: all 0.4s ease-in-out;
+  transform: scale(1.1); */
+/* } */ 
+
+/* .hero-container .hero-profile:hover{
+  transition: all 0.3 ease-in-out;
+  transform: scale(1.1);
+} */
 
 .hero-name {
   font-size: 3rem;
   font-weight: bold;
   color: #6E8CFB;
   margin-bottom: 0.5rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-name:hover{
+  transition: all 0.5 ease-in-out;
+  transform: scale(1.1);
 }
 
 .hero-tagline {
@@ -190,6 +229,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 1rem; /* spacing between profile, name, tagline, buttons+social */
+  transition: all 0.3s ease-in-out;
 }
 
 .hero-actions {
